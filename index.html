@@ -15,11 +15,51 @@
     <!--============ SWIPER CSS ============-->
 
     <!--============ CSS ============-->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
 
     <title>BookBay - Responsive book website</title>
   </head>
   <body>
-    <h1>BookBay</h1>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="container nav">
+        <a href="#" class="nav_logo">
+          <i class="ri-book-3-line"></i> BookBay
+        </a>
+
+        <div class="nav_menu">
+          <ul class="nav_list">
+            <li class="list_item">
+              <a href="#" class="nav_link">
+                <i class="ri-home-line"></i>
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li class="list_item">
+              <a href="pages/books.html" class="nav_link">
+                <i class="ri-book-2-line"></i>
+                <span>Booklist</span>
+              </a>
+            </li>
+
+            <li class="list_item">
+              <a href="pages/wishlist.html" class="nav_link">
+                <i class="ri-heart-line"></i>
+                <span>Wishlist</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav_actions">
+          <!-- Search Button -->
+          <i class="ri-search-line"></i>
+
+          <!-- Theme Button -->
+          <i class="ri-moon-line"></i>
+        </div>
+      </nav>
+    </header>
   </body>
 </html>
