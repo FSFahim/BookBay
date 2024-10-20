@@ -21,7 +21,6 @@ if (searchClose) {
 /*=============== ADD SHADOW HEADER ===============*/
 const scrollHeader = () => {
   const header = document.getElementById("header");
-  // Add a class if the bottom offset is greater than 50 of the viewport
   this.scrollY >= 50
     ? header.classList.add("shadow-header")
     : header.classList.remove("shadow-header");
@@ -31,10 +30,10 @@ window.addEventListener("scroll", scrollHeader);
 /*================ HOME SWIPER ================*/
 let swiperHome = new Swiper(".home_swiper", {
   loop: true,
-  spaceBetween: 10, // Adjust this for proper spacing between slides
+  spaceBetween: 10,
   grabCursor: true,
   slidesPerView: "auto",
-  centeredSlides: true, // Ensures the center slide is properly centered
+  centeredSlides: true,
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
@@ -42,7 +41,7 @@ let swiperHome = new Swiper(".home_swiper", {
 
   breakpoints: {
     1220: {
-      spaceBetween: 20, // Adjust the space for larger screens
+      spaceBetween: 20,
     },
   },
 });
@@ -64,7 +63,7 @@ let swiperDownloaded = new Swiper(".downloaded_swiper", {
     1150: {
       slidesPerView: 4,
       centeredSlides: false,
-      spaceBetween: 20, // Adjust the space for larger screens
+      spaceBetween: 20,
     },
   },
 });
@@ -72,9 +71,47 @@ let swiperDownloaded = new Swiper(".downloaded_swiper", {
 /*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
   const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
   this.scrollY >= 350
     ? scrollUp.classList.add("show-scroll")
     : scrollUp.classList.remove("show-scroll");
 };
 window.addEventListener("scroll", scrollUp);
+
+/*=============== ACTIVE LINK ===============*/
+const navLinks = document.querySelectorAll(".nav_link");
+const currentPage = window.location.pathname;
+navLinks.forEach((link) => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+
+/*=============== DARK LIGHT THEME ===============*/
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
+const iconTheme = "ri-sun-line";
+
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+  themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
+
+if (selectedTheme) {
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+  );
+  themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](
+    iconTheme
+  );
+}
+
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selected-icon", getCurrentIcon());
+});
