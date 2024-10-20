@@ -399,3 +399,54 @@ img {
   color: var(--first-color);
   transition: border 0.4s background-color 0.4s;
 }
+
+/*===============  SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: rgb(209, 211, 219);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: rgb(143, 147, 161);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 0.5rem;
+  background-color: rgb(118, 129, 153);
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+  padding: 2rem;
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  padding: 6px;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  z-index: var(--z-tooltip);
+  transition: bottom 0.4s transform 0.4s background-color 0.4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-0.5rem);
+}
+
+.show-scroll {
+  bottom: 6rem;
+}
