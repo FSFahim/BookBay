@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--============ FAVICON ============-->
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.png"
+      type="image/x-icon"
+    />
 
     <!--============ REMIXICONS ============-->
     <link
@@ -13,10 +17,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
     />
     <!--============ SWIPER CSS ============-->
-    <link rel="stylesheet" href="stylesheets/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../stylesheets/swiper-bundle.min.css" />
 
     <!--============ CSS ============-->
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
 
     <title>BookBay - Responsive book website</title>
   </head>
@@ -24,28 +28,28 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="container nav">
-        <a href="#" class="nav_logo">
+        <a href="../index.html" class="nav_logo">
           <i class="ri-book-3-line"></i> BookBay
         </a>
 
         <div class="nav_menu">
           <ul class="nav_list">
             <li class="list_item">
-              <a href="#" class="nav_link active">
+              <a href="../index.html" class="nav_link active">
                 <i class="ri-home-line"></i>
                 <span>Home</span>
               </a>
             </li>
 
             <li class="list_item">
-              <a href="pages/books.html" class="nav_link">
+              <a href="books.html" class="nav_link">
                 <i class="ri-book-2-line"></i>
                 <span>Booklist</span>
               </a>
             </li>
 
             <li class="list_item">
-              <a href="pages/wishlist.html" class="nav_link">
+              <a href="wishlist.html" class="nav_link">
                 <i class="ri-heart-line"></i>
                 <span>Wishlist</span>
               </a>
@@ -81,7 +85,8 @@
     <main class="main">
       <!--=============== SEARCH & FILTER ===============-->
       <!--=============== BOOK LIST ===============-->
-      <section id="bookListContainer"></section>
+      <div id="bookListContainer" class="book_grid_container"></div>
+      <div id="pagination" class="pagination"></div>
     </main>
 
     <!--==================== FOOTER ====================-->
@@ -93,12 +98,12 @@
     </a>
 
     <!--=============== SCROLL REVEAL ===============-->
-    <script src="js/scrollreveal.min.js"></script>
+    <script src="../js/scrollreveal.min.js"></script>
 
     <!--=============== SWIPER JS ===============-->
-    <script src="js/swiper-bundle.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
 
     <!--=============== SCRIPT JS ===============-->
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>
